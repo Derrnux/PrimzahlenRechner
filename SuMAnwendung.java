@@ -61,7 +61,7 @@ public class SuMAnwendung extends EBAnwendung
     // Dienste
     public void fillAuswahlen()
     {
-         for(int i=0; i<=100000; i = i + 10)
+         for(int i=0; i<=10000000; i = i + 100)
          {
              aLaenge.haengeAn("Bis:"+i);
             }
@@ -76,7 +76,7 @@ public class SuMAnwendung extends EBAnwendung
         status.setzeSchriftFarbe(10); // Status zeigt hier in der Farbe Rot an, das nun berechnet wird
         status.setzeInhalt("Berechne...");
         
-        prim.pruefePrimzahl(aLaenge.index() * 10 - 10);
+        prim.pruefePrimzahl(aLaenge.index() * 100 - 100);
         resetAndFillE();
         
         status.setzeSchriftFarbe(5); // Status zeigt hier in der Farbe Grün an, das die Sortierung abgeschlossen ist
