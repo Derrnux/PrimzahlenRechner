@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Primzahlen
+comment0.text=\r\n\ @author\ \r\n\ @version\ \r\n
+comment1.params=
+comment1.target=Primzahlen()
+comment2.params=current
+comment2.target=void\ pruefen(int)
+comment3.params=current
+comment3.target=boolean\ isPrimzahl(int)
+comment4.params=current
+comment4.target=void\ save(int)
+comment5.params=
+comment5.target=void\ resetS()
+comment6.params=
+comment6.target=void\ resetE()
+comment7.params=max
+comment7.target=void\ pruefePrimzahl(int)
+numComments=8
