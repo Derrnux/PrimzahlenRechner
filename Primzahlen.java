@@ -96,7 +96,6 @@ public class Primzahlen
        this.resetS();
        for(int m = 2; m <= c; m++)
        {
-           System.out.println("schleife");
            this.pruefen(m);
        }
     }
