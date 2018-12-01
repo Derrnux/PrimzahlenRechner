@@ -10,7 +10,6 @@ public class Primzahlen
     // Bezugsobjekte
  
     protected Liste<Integer> schritte;
-    protected Liste<Etikett> e;
 
     // Attribute
     protected int seite = 1;
@@ -27,14 +26,6 @@ public class Primzahlen
     public Primzahlen()
     {
         schritte = new Liste<Integer>();
-        e = new Liste<Etikett>();
-        for(int i = 1; i<20; i++)
-        {
-            e.haengeAn(new Etikett(10,70+30*i,1200,25,""));
-            e.zumEnde();
-            e.aktuelles().setzeSchriftgroesse(20);
-        }
-
     }
 
     // Dienste
@@ -69,15 +60,6 @@ public class Primzahlen
     public void resetS()
     {
         schritte.entferneAlleElemente();
-    }
-
-    public void resetE()
-    {
-        for(int i=1;i<20;i++)
-        {
-            e.geheZuPosition(i);
-            e.aktuelles().setzeInhalt("");
-        }
     }
 
        public void pruefePrimzahl(int max) 

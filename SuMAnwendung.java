@@ -13,7 +13,8 @@ public class SuMAnwendung extends EBAnwendung
     Knopf starteRechnung; // Knopf, um errechnen von primzahlen zu starten
 
     Auswahl aLaenge; // Dropdown zur Auswahl der "Sortierlänge"
-    //Textfeld laenge;
+    
+    protected Liste<Etikett> e;
 
     Primzahlen prim; //deklarierung der klasse Primzahlen()
     Etikett status; // Etikett, dass einen Statusbericht anzeigt (Bsw. "Berechne" oder "fertig")
@@ -42,7 +43,14 @@ public class SuMAnwendung extends EBAnwendung
 
         aLaenge = new Auswahl(110,10,100,25); 
         this.fillAuswahlen();
-        //laenge = new Textfeld(110,10,100,25,"max eingeben");
+        
+        e = new Liste<Etikett>();
+        for(int i = 1; i<20; i++)
+        {
+            e.haengeAn(new Etikett(10,70+30*i,1200,25,""));
+            e.zumEnde();
+            e.aktuelles().setzeSchriftgroesse(20);
+        }
 
         status = new Etikett(1200,3,100,30,"Warte auf Start");
         status.setzeSchriftFarbe(1);
@@ -68,6 +76,15 @@ public class SuMAnwendung extends EBAnwendung
             aLaenge.haengeAn("Bis:"+i);
         }
     }
+    
+    public void resetE()
+    {
+        for(int i=1;i<20;i++)
+        {
+            e.geheZuPosition(i);
+            e.aktuelles().setzeInhalt("");
+        }
+    }
 
     public void bStarteRechnungGeklickt()
     {
@@ -79,6 +96,8 @@ public class SuMAnwendung extends EBAnwendung
 
         prim.pruefePrimzahl(aLaenge.index() * 100 - 100);
         resetAndFillE();
+        
+        getMaxSeite();
 
         status.setzeSchriftFarbe(5); // Status zeigt hier in der Farbe Grün an, das die Sortierung abgeschlossen ist
         status.setzeInhalt("FERTIG");
@@ -87,14 +106,14 @@ public class SuMAnwendung extends EBAnwendung
 
     public void resetAndFillE()
     {
-        prim.resetE();
+        resetE();
         for(int i=1;i<20;i++)
         {    
             if(prim.schritte.laenge()>=19*(seite-1)+i)
             {
-                prim.e.geheZuPosition(i);
+                e.geheZuPosition(i);
                 prim.schritte.geheZuPosition(19*(seite-1)+i);
-                prim.e.aktuelles().setzeInhalt(prim.schritte.aktuelles()); 
+                e.aktuelles().setzeInhalt(prim.schritte.aktuelles()); 
             }
         }
     }
@@ -134,7 +153,6 @@ public class SuMAnwendung extends EBAnwendung
 
     public void next()
     {
-        this.getMaxSeite();
         if(seite<maxSeite)
         {
             seite = seite + 1;
@@ -145,7 +163,6 @@ public class SuMAnwendung extends EBAnwendung
 
     public void last()
     {
-        this.getMaxSeite();
         if(seite<maxSeite)
         {
             seite = maxSeite;
