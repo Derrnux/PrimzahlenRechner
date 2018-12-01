@@ -54,7 +54,7 @@ public class SuMAnwendung extends EBAnwendung
 
         status = new Etikett(1200,3,100,30,"Warte auf Start");
         status.setzeSchriftFarbe(1);
-        Seite = new Etikett(350,675,50,30,"Seite: 0");
+        Seite = new Etikett(350,675,100,30,"Seite: 0");
         Info = new Etikett(1000,200,300,50,"Infotext:   ");
         Info1 = new Etikett(1000,220,300,50,"1. Auswählen bis wo Primzahlen gesucht werden sollen.");
         Info2 = new Etikett(1000,240,300,50,"2. Linken Knopf drücken um die Suche zu starten.");
