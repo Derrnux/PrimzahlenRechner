@@ -49,28 +49,18 @@ public class Primzahlen
     
         public boolean isPrimzahl(int current) 
     {  
-         if (current == 2 || current == 3 || current == 5 || current == 7 ||
-         current == 9 || current == 11 || current == 13 || current == 17 ||
-         current == 19 || current == 23 || current == 29 || current == 31 ||
-         current == 37 || current == 41 || current == 43 || current == 47 ||
-         current == 53 || current == 59 || current == 61 || current == 67 ||
-         current == 71 || current == 73 || current == 79 || current == 83 ||
-         current == 89 || current == 97)
-         {
-             return true;
-            }
-         
-          for(long i = 2; i * i <= current; i++)
-          {
-              if(current % i == 0)
-              {
-                   return(false); 
-              }
-         }
-            
-         return true;
+         if (current <= 2) { 
+            return (current == 2); 
+        } 
+        for (long i = 2; i * i <= current; i++) { 
+            if (current % i == 0) { 
+                return false; 
+            } 
+        }
+        return true;
+        
     }
-     
+    
     public void save(int current)
     {
         schritte.haengeAn(current);
