@@ -3,7 +3,7 @@ import sum.komponenten.*;
 import sum.werkzeuge.*;
 import sum.strukturen.*;
 /**
- * @author
+ * @author Dagh Zeppenfeld
  * @version
  */
 public class SuMAnwendung extends EBAnwendung
